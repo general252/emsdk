@@ -9,13 +9,13 @@ RUN yum install -y python && \
 RUN git clone https://github.com/emscripten-core/emsdk.git
 
 RUN cd emsdk
-RUN ./emsdk install latest
-RUN ./emsdk activate latest
-RUN ./emsdk construct_env
+RUN /emsdk/emsdk install latest
+RUN /emsdk/emsdk activate latest
+RUN /emsdk/emsdk construct_env
 RUN echo ". /emsdk/emsdk_set_env.sh" >> ~/.bashrc && . ~/.bashrc
 RUN em++ --version
 
 
-WORKDIR /home/emsdk
+WORKDIR /home
 
 CMD python
