@@ -6,6 +6,9 @@ RUN yum install -y gcc && \
 RUN yum install -y python && \
     yum install -y git && \
     yum install -y cmake
+   
+RUN yum install -y libz-dev autoconf libtool
+
 RUN git clone https://github.com/emscripten-core/emsdk.git
 
 RUN cd emsdk
