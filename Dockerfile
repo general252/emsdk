@@ -8,6 +8,7 @@ RUN yum install -y python && \
     yum install -y cmake
    
 RUN yum install -y libz-dev autoconf libtool
+RUN yum -y install bzip2
 
 RUN git clone https://github.com/emscripten-core/emsdk.git
 
