@@ -1,6 +1,7 @@
 
 FROM ubuntu:16.04
 
+RUN apt-get update
 RUN apt-get install -y python && \
     apt-get install -y git && \
     apt-get install -y cmake
