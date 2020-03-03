@@ -1,13 +1,13 @@
 
 FROM centos:latest
 
-RUN apt-get install -y gcc && \
-    apt-get install -y gcc-c++ && \
-    apt-get install -y groupinstall development  && \
-    apt-get install -y autoconf automake libtool
-RUN apt-get install -y python && \
-    apt-get install -y git && \
-    apt-get install -y cmake
+RUN yum install -y gcc && \
+    yum install -y gcc-c++ && \
+    yum install -y groupinstall development  && \
+    yum install -y autoconf automake libtool
+RUN yum install -y python && \
+    yum install -y git && \
+    yum install -y cmake
 RUN cd /home && \
     git clone https://github.com/emscripten-core/emsdk.git
 
