@@ -2,9 +2,7 @@
 FROM centos:latest
 
 RUN yum install -y gcc && \
-    yum install -y gcc-c++ && \
-    yum install -y groupinstall development  && \
-    yum install -y autoconf automake libtool
+    yum install -y gcc-c++
 RUN yum install -y python && \
     yum install -y git && \
     yum install -y cmake
