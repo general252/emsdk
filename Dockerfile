@@ -20,4 +20,4 @@ RUN /emsdk/emsdk/emsdk_set_env.sh
 
 WORKDIR /home
 
-CMD python
+CMD bash
