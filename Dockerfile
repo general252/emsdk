@@ -1,13 +1,10 @@
 
 FROM ubuntu:16.04
 
-RUN apt-get install -y gcc && \
-    apt-get install -y gcc-c++
 RUN apt-get install -y python && \
     apt-get install -y git && \
     apt-get install -y cmake
-   
-RUN apt-get install -y libz-dev autoconf libtool
+
 RUN apt-get install -y bzip2
 
 RUN git clone https://github.com/emscripten-core/emsdk.git
