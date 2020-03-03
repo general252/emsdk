@@ -14,7 +14,6 @@ RUN cd emsdk
 RUN /emsdk/emsdk install latest
 RUN /emsdk/emsdk activate latest
 RUN /emsdk/emsdk construct_env
-RUN /emsdk/emsdk/emsdk_set_env.sh
 
 WORKDIR /home
 
