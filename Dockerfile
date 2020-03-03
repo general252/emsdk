@@ -1,20 +1,22 @@
 
-FROM centos:7
+FROM ubuntu:16.04
 
-RUN yum install -y gcc && \
-    yum install -y gcc-c++
-RUN yum install -y python && \
-    yum install -y git && \
-    yum install -y cmake
+RUN apt-get install -y gcc && \
+    apt-get install -y gcc-c++
+RUN apt-get install -y python && \
+    apt-get install -y git && \
+    apt-get install -y cmake
    
-RUN yum install -y libz-dev autoconf libtool
-RUN yum -y install bzip2
+RUN apt-get install -y libz-dev autoconf libtool
+RUN apt-get install -y bzip2
 
 RUN git clone https://github.com/emscripten-core/emsdk.git
 
 RUN cd emsdk
 RUN /emsdk/emsdk install latest
 RUN /emsdk/emsdk activate latest
+RUN /emsdk/emsdk construct_env
+RUN /emsdk/emsdk/emsdk_set_env.sh
 
 WORKDIR /home
 
