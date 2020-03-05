@@ -13,8 +13,8 @@ RUN git clone https://github.com/emscripten-core/emsdk.git
 RUN cd emsdk
 RUN /emsdk/emsdk install latest
 RUN /emsdk/emsdk activate latest
-RUN source /emsdk/emsdk_env.sh
 
 WORKDIR /home
 
+# source /emsdk/emsdk_env.sh
 CMD bash
