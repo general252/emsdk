@@ -14,7 +14,14 @@ RUN cd emsdk
 RUN /emsdk/emsdk install latest
 RUN /emsdk/emsdk activate latest
 
+RUN echo "source /emsdk/emsdk_env.sh" >> /root/.bashrc && \
+    echo '#include <stdio.h>' > /home/hello.c && \
+    echo 'int main(int argc, char ** argv) {' >> /home/hello.c && \
+    echo '    printf("Hello, world!\\n");' >> /home/hello.c && \
+    echo '    return 0;' >> /home/hello.c && \
+    echo '}' >> /home/hello.c && \
+    echo 'emcc hello.c -s WASM=1 -o hello.html' > /home/build.sh
+
 WORKDIR /home
 
-# source /emsdk/emsdk_env.sh
 CMD bash
