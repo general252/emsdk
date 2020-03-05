@@ -1,8 +1,8 @@
 
-FROM ubuntu:16.04
+# FROM ubuntu:16.04
+FROM registry.cn-hangzhou.aliyuncs.com/cn_portainer/ubuntu:16.04-01
 
-RUN apt-get update && \
-    apt-get install -y python && \
+RUN apt-get install -y python && \
     apt-get install -y git && \
     apt-get install -y cmake && \
     apt-get install -y bzip2 xz-utils && \
