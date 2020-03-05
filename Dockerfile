@@ -19,5 +19,5 @@ RUN echo "source /emsdk/emsdk_env.sh" >> /root/.bashrc && \
     echo '    return 0;' >> /home/hello.c && \
     echo '}' >> /home/hello.c && \
     echo 'emcc hello.c -s WASM=1 -o hello.html' > /home/build.sh
-
+    
 CMD bash
