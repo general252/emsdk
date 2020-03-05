@@ -1,8 +1,8 @@
 
 FROM ubuntu:16.04
 
-RUN apt-get update
-RUN apt-get install -y python && \
+RUN apt-get update && \
+    apt-get install -y python && \
     apt-get install -y git && \
     apt-get install -y cmake && \
     apt-get install -y bzip2 xz-utils && \
@@ -10,9 +10,9 @@ RUN apt-get install -y python && \
 
 RUN git clone https://github.com/emscripten-core/emsdk.git
 
-RUN cd emsdk
-RUN /emsdk/emsdk install latest
-RUN /emsdk/emsdk activate latest
+
+RUN /emsdk/emsdk install  latest && \
+    /emsdk/emsdk activate latest
 
 RUN echo "source /emsdk/emsdk_env.sh" >> /root/.bashrc && \
     echo '#include <stdio.h>' > /home/hello.c && \
